@@ -1,6 +1,4 @@
 
-
-
 Sub learnDoLoop_I()
 
 Dim checker As String
