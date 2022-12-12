@@ -5,10 +5,12 @@ Option Explicit
 
 'WORKBOOKS:
 
+'WORKBOOKS:
+
     'Wokbooks("lessons")
-    'Workbooks(1) - ïîðÿäîê â êîòîðîì ìû îòêðûëè êíèãè (çàïîìèíàåò ïî èíäåêñàì)
+    'Workbooks(1) - the order in which we opened the books (remembers by index)
     'ThisWorkbook
-    'ActiveWorkbook - ññûëàåòñÿ íà ýêñåëü ôàéë íà ÿ÷åéêè êîòîðîãî ìû ïîñëåäíèé ðàç êëèêíóëè
+    'ActiveWorkbook - refers to the excel file which cells we last clicked
 
 
 Sub Urok5()
@@ -34,7 +36,7 @@ Sub Urok5_1()
 '   MsgBox Workbooks(1).Worksheets(2).Name
 '   MsgBox Workbooks(1).ActiveSheet.Name
 
-'åñëè íå óêàçûâàòü êîíêðåòíóþ êíèãó, òîãäà ïî óìîë÷àíèþ áåðåòñÿ ActiveWorkbook:
+'If you do not specify a specific workbook, then the default is ActiveWorkbook:
 '    MsgBox Worksheets(2).Name
 
 End Sub
@@ -50,7 +52,3 @@ Sub Urok5_2()
 '    MsgBox Range("A1:D4").Address
 
 End Sub
-
-
-
-
