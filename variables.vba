@@ -1,6 +1,6 @@
 Option Explicit
 
-'ÏÅÐÅÌÅÍÍÛÅ È ÒÈÏÛ ÄÀÍÍÛÕ
+'VARIABLES AND DATA TYPES
 
 Sub Urok3()
 
@@ -9,7 +9,7 @@ Sub Urok3()
     Dim num1 As Long
     Dim someDate As Date
     
-    someText = "Èòîã: "
+    someText = "Eoia: "
     num1 = 100
     someDate = "11.12.2022"
     
@@ -20,7 +20,7 @@ Sub Urok3()
     MsgBox someText & num2
     
     
-'    ïåðåìåííûíå ïåðåçàïèñûâàþòñÿ êàê â ïèòîíå:
+'   variables are overwritten like in python:
     num2 = 4
     MsgBox num2
     
@@ -45,9 +45,9 @@ End Sub
 
 
 
-'ÒÈÏÛ ÄÀÍÍÛÕ:
-'Integer,Long - äëÿ öåëûõ ÷èñåë. Ìîæíî èñïîëüçîâàòü âñåãäà Long
-'Double - äëÿ ÷èñåë ñ çàïÿòîé, òàê êàê Long áóäåò èõ îêðóãëÿòü
+'DATA TYPES:
+'Integer,Long - for integers, long is more commonly used
+'Double - for floating point numbers. If you use Long the number will be rounded
 'String
 'Boolean
 'Date
@@ -61,3 +61,4 @@ Sub Urok4()
     MsgBox num1
     
 End Sub
+
