@@ -9,7 +9,7 @@ Sub Urok3()
     Dim num1 As Long
     Dim someDate As Date
     
-    someText = "Eoia: "
+    someText = "res: "
     num1 = 100
     someDate = "11.12.2022"
     
@@ -61,4 +61,3 @@ Sub Urok4()
     MsgBox num1
     
 End Sub
-
