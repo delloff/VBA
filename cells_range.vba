@@ -7,7 +7,7 @@ Option Explicit
 
 'WORKBOOKS:
 
-    'Wokbooks("lessons.xlsm")
+    'Wokbooks("les_main.xlsm")
     'Workbooks(1) - the order in which we opened the books (remembers by index)
     'ThisWorkbook
     'ActiveWorkbook - refers to the excel file which cells we last clicked
@@ -77,10 +77,52 @@ End Sub
 'MIXED METHOD (RANGE+CELLS)
 Sub Urok6_1()
 
-'    ThisWorkbook.Worksheets("Sheet1").Range("A1:E10") = 1
-    ThisWorkbook.Worksheets("Sheet1").cells(cells(1, 1), cells(10, 5)) = 1
+'    ThisWorkbook.Worksheets("Sheet1").Range("A1:E10") = 0
 '    ThisWorkbook.Worksheets("Sheet1").Range(cells(1, 1), cells(10, 5)) = 0
+    Workbooks("les_main.xlsm").Worksheets("Sheet1").Range(cells(1, 1), cells(10, 5)) = 0
 
 End Sub
 
+Sub Urok6_2()
 
+'    ThisWorkbook.Worksheets("Sheet1").Range("A1:E10") = 1
+'    ThisWorkbook.Worksheets("Sheet1").Range(cells(1, 1), cells(10, 5)) = 1
+    Workbooks("les_main.xlsm").Worksheets("Sheet1").Range(cells(1, 1), cells(10, 5)) = 1
+
+End Sub
+
+'WITH - shortens repetitive code
+
+Sub Urok7()
+
+'    ThisWorkbook.Worksheets("Sheet1").Range("A1") = 1
+'    ThisWorkbook.Worksheets("Sheet1").Range("A2") = 2
+'    ThisWorkbook.Worksheets("Sheet1").Range("A3") = 3
+    
+    'we can cut down the above code to:
+    With ThisWorkbook.Worksheets("Sheet1")
+        Range("A1") = 1
+        Range("A2") = 2
+        Range("A3") = 3
+    End With
+    
+End Sub
+
+Sub Urok7_1()
+
+    With ThisWorkbook.Worksheets("Sheet1").Range("A1").Offset(4, 4)
+        .Value = 100
+        .Font.Bold = True
+        .Font.Color = vbRed
+    End With
+    
+End Sub
+
+
+'OFFSET (works also with negatives)
+
+Sub Urok7_2()
+
+    ThisWorkbook.Worksheets("Sheet1").Range("A1").Offset(1, 2) = 4  'C2
+
+End Sub
