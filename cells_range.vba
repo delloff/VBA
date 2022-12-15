@@ -111,9 +111,9 @@ End Sub
 Sub Urok7_1()
 
     With ThisWorkbook.Worksheets("Sheet1").Range("A1").Offset(4, 4)
-        .Value = 100
         .Font.Bold = True
         .Font.Color = vbRed
+        .Value = 100
     End With
     
 End Sub
@@ -126,3 +126,5 @@ Sub Urok7_2()
     ThisWorkbook.Worksheets("Sheet1").Range("A1").Offset(1, 2) = 4  'C2
 
 End Sub
+
+
