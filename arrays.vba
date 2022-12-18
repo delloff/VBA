@@ -1,61 +1,79 @@
-Option Explicit
 
-Sub learningArrays()
+Sub Urok12_1()
 
-Dim testArray(1 To 5) As Long
-'testArray(4) = 40
-MsgBox LBound(testArray)    'Lower Bound
-MsgBox UBound(testArray)    'Upper Bound
+Dim arr(0 To 5) As String
+'arr(4) = 40    'index 4 holds 40
+    
+'    bordera of the array:
+'    MsgBox LBound(arr)
+'    MsgBox UBound(arr)
 
-
-End Sub
-
-Sub testArray_I()
-
-Dim testArray(1 To 5) As Long
 Dim i As Long
 
-'записываем в массив значение ячеек
-For i = LBound(testArray) To UBound(testArray)
-    testArray(i) = ActiveSheet.Range("C" & i + 11)
+'putting values in array
+For i = LBound(arr) To UBound(arr)
+    arr(i) = ActiveSheet.Range("C" & i + 1)
 Next i
 
-'выводим в диологовом окне эти значения
-For i = LBound(testArray) To UBound(testArray)
-    MsgBox testArray(i)
+'outputting values in msgbox
+For i = LBound(arr) To UBound(arr)
+    MsgBox arr(i)
 Next i
 
 End Sub
 
+'DYNAMIC ARRAY
 
-'динамичный массиф (определяет границы, которые нам нужны)
+Sub urok12_2()
 
-Sub dynamicArrays()
-
-Dim dynArray()
+Dim dynarr()    'we dont declare borders
 Dim lboundVar As Long
 Dim uboundVar As Long
 
 lboundVar = 1
-uboundVar = 3
+uboundVar = 10
+ReDim dynarr(lboundVar To uboundVar)    'declare borders to our dynArr()
+Dim i As Long
 
-ReDim dynArray(lboundVar To uboundVar)
-
-Dim i As Integer
-For i = LBound(dynArray) To UBound(dynArray)
+For i = LBound(dynarr) To UBound(dynarr)
     MsgBox i
 Next i
 
-
-'изменияем границы массива
-
 lboundVar = 5
-uboundVar = 7
+uboundVar = 8
 
-ReDim dynArray(lboundVar To uboundVar)
-MsgBox "Произошло изменение границ массива"
-For i = UBound(dynArray) To LBound(dynArray) Step -1
+ReDim dynarr(lboundVar To uboundVar)
+For i = LBound(dynarr) To UBound(dynarr)
     MsgBox i
 Next i
 
 End Sub
+
+
+'HOMEWORK
+
+Sub Urok12_3()
+
+Dim dynarr()
+Dim lboundVar As Long
+Dim uboundVar As Long
+
+first_ind = 1
+last_ind = Worksheets(1).Cells(Rows.Count, 1).End(xlUp).Row
+ReDim dynarr(first_ind To last_ind)
+Dim i As Long
+
+'putting values in array
+For i = LBound(dynarr) To UBound(dynarr)
+    dynarr(i) = ActiveSheet.Range("A" & i)
+Next i
+
+
+'outputting values in msgbox
+For i = LBound(dynarr) To UBound(dynarr)
+    MsgBox dynarr(i) & " - grade: " & ActiveSheet.Range("B" & i)
+Next i
+
+End Sub
+
+
