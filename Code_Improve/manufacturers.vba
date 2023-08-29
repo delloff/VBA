@@ -21,3 +21,28 @@ Private Sub Worksheet_Change(ByVal Target As Range)
     Next cell
 
 End Sub
+
+
+
+Private Sub Worksheet_Change(ByVal Target As Range)
+    Dim rng As Range
+    Dim cell As Range
+    
+    ' Set the range object to the column L data
+    Set rng = Me.Range("L:L")
+    
+    ' Loop through each cell in the changed range
+    For Each cell In Target
+        ' Check if the changed cell is in column L
+        If Not Intersect(cell, rng) Is Nothing Then
+            Select Case cell.value
+                Case "sony1", "sony2", "sony3"
+                    cell.value = "sony"
+                Case "philips1", "philips2", "philips3"
+                    cell.value = "philips"
+                Case "redmi1", "redmi2", "redmi3", "REDMI"
+                    cell.value = "redmi"
+            End Select
+        End If
+    Next cell
+End Sub
