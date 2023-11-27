@@ -1,3 +1,16 @@
+	все вместе		работа	материал
+мусор	100		100	
+дверь+установка	500	400+100	100	400
+свет+розетка	35		20	15
+стяжка	150		150	
+стенка	200		200	
+блоки	330	300+30		330
+				
+				
+итого	1315		570	745
+
+
+
 Public rinc As Integer, cinc As Integer, speed As Integer, OnMove As Boolean, GameStarted As Boolean
 Dim rlim As Integer, clim As Integer, score As Integer, GameWs As Worksheet
 Dim r() As Integer, c() As Integer
